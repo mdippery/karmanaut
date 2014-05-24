@@ -1,9 +1,9 @@
-# Chameleon
+# Karmanaut
 
-Chameleon is a simple service for sampling reputation from
-[Stack Overflow](http://stackoverflow.com). It takes a list of users
-from a MongoDB collection, collects those users' reputation scores,
-and saves them back into a MongoDB collection.
+Karmanaut is a simple service for sampling link and comment reputation from
+[Reddit](http://www.reddit.com). It takes a list of users from a MongoDB
+collection, collects those users' reputation scores, and saves them back
+into a MongoDB collection.
 
 ## Prerequisites
 
@@ -16,9 +16,9 @@ and saves them back into a MongoDB collection.
 
         $ lein uberjar
 
-2. Create a MongoDB database called `chameleon`.
+2. Create a MongoDB database called `karmanaut`.
 
-3. In the `chameleon` database, create a collection called `users`.
+3. In the `karmanaut` database, create a collection called `users`.
 
 4. Populate the `users` collection with users whose reputation you would
    like to record, in the following format:
