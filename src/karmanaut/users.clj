@@ -4,6 +4,6 @@
 
 (def ^{:private true} coll "users")
 
-(def subjects (mc/find-maps db/db coll))
-
-(def subject-ids (map (fn [e] (long (:_id e))) subjects))
+(def subjects
+  (let [subject-maps (mc/find-maps db/db coll)]
+    (map #(:_id %) subject-maps)))

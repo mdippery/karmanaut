@@ -4,6 +4,6 @@
   (:gen-class))
 
 (defn -main [& args]
-  (let [user-maps (crawler/crawl-users users/subject-ids)]
+  (let [user-maps (crawler/crawl-users users/subjects)]
     (crawler/update-users! user-maps)
     (crawler/insert-samples! user-maps)))
