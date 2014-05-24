@@ -31,3 +31,32 @@ into a MongoDB collection.
 
 You will probably want to run the program as a cron task, to sample
 reputation periodically.
+
+---
+
+## FAQ
+
+### Do you have any affiliation with [karmanaut](http://www.reddit.com/user/karmanaut)?
+
+No. I was loosely inspired by the username, but karmanaut -- literally,
+"karma sailor" or "karma explorer" -- just made sense for this project
+name, since that's literally what it's doing.
+
+### Where does this project come from?
+
+It's a fork of a similar crawler I wrote for Stack Overflow reputation
+called [Chameleon](https://github.com/mdippery/chameleon). One day I hope
+to factor out a common base for both these projects; for now, though,
+Karmanaut remains but a (very divergent) fork.
+
+### What's the goal?
+
+To build charts of karma growth over time, and calculate all sorts of
+fun statistics, as well as other data points like the derivative of
+one's karma.
+
+### Is this project actually used in production?
+
+Yes. It is running on `pacific.monkey-robot.com`. I haven't exposed the
+data publicly yet, not because I don't want to, but because I haven't
+had time to build a web frontend for it.
