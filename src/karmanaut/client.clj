@@ -11,17 +11,14 @@
 (defn body [username]
   (json/read-str (:body (resp username))))
 
-(defn items [username]
-  ((body username) "items"))
-
 (defn user-data [username]
-  ((items username) 0))
+  ((body username) "data"))
 
 (defn user-key [username data-key]
   ((user-data username) data-key))
 
-(defn display-name [username]
-  (user-key username "display_name"))
+(defn link-karma [username]
+  (user-key username "link_karma"))
 
-(defn rep [username]
-  (user-key username "reputation"))
+(defn comment-karma [username]
+  (user-key username "comment_karma"))
