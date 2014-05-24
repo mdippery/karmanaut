@@ -24,14 +24,8 @@
    :link_karma (:link-karma user-map),
    :comment_karma (:comment-karma user-map)})
 
-(defn update-user! [user-map]
-  (mc/update db/db "users" {:_id (:username user-map)}))
-
 (defn create-sample! [user-map]
   (mc/insert db/db "samples" (create-sample-document user-map)))
-
-(defn update-users! [user-maps]
-  (dorun (map update-user! user-maps)))
 
 (defn insert-samples! [user-maps]
   (dorun (map create-sample! user-maps)))
