@@ -3,7 +3,7 @@
   (:require [clojure.data.json :as json]))
 
 (defn url [username]
-  (str "http://www.reddit.com/user/" username ".json"))
+  (str "http://www.reddit.com/user/" username "/about.json"))
 
 (defn resp [username]
   (client/get (url username)))
