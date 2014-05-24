@@ -38,9 +38,9 @@ reputation periodically.
 
 ### Do you have any affiliation with [karmanaut](http://www.reddit.com/user/karmanaut)?
 
-No. I was loosely inspired by the username, but karmanaut -- literally,
-"karma sailor" or "karma explorer" -- just made sense for this project
-name, since that's literally what it's doing.
+No. I was loosely inspired by the username, but karmanaut—literally,
+"karma sailor" or "karma explorer"—just made sense for this project
+name, since that's what it's doing: exploring karma.
 
 ### Where does this project come from?
 
