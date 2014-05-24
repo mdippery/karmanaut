@@ -1,6 +1,6 @@
-(ns chameleon.crawler-test
+(ns karmanaut.crawler-test
   (:require [clojure.test :refer :all]
-            [chameleon.crawler :refer :all]))
+            [karmanaut.crawler :refer :all]))
 
 (def ^{:private true} user-map {:user-id 28804,
                                 :display-name "mipadi",

@@ -1,4 +1,4 @@
-(ns chameleon.client
+(ns karmanaut.client
   (:require [clj-http.client :as client])
   (:require [clojure.data.json :as json]))
 

@@ -1,4 +1,4 @@
-(ns chameleon.utils
+(ns karmanaut.utils
   (:import [java.util Date]))
 
 (defn env [key default]

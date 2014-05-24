@@ -1,7 +1,7 @@
-(ns chameleon.crawler
-  (:require [chameleon.client :as client]
-            [chameleon.db :as db]
-            [chameleon.utils :as utils]
+(ns karmanaut.crawler
+  (:require [karmanaut.client :as client]
+            [karmanaut.db :as db]
+            [karmanaut.utils :as utils]
             [monger.collection :as mc]))
 
 (defn create-user-map [user-id]

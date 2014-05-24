@@ -1,5 +1,5 @@
-(ns chameleon.users
-  (:require [chameleon.db :as db]
+(ns karmanaut.users
+  (:require [karmanaut.db :as db]
             [monger.collection :as mc]))
 
 (def ^{:private true} coll "users")

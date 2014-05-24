@@ -1,6 +1,6 @@
-(ns chameleon.utils-test
+(ns karmanaut.utils-test
   (:require [clojure.test :refer :all]
-            [chameleon.utils :refer :all]))
+            [karmanaut.utils :refer :all]))
 
 (deftest test-env
   (is (instance? String (env "HOME" "/Users/mdippery"))))

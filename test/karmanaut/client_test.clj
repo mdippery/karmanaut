@@ -1,6 +1,6 @@
-(ns chameleon.client-test
+(ns karmanaut.client-test
   (:require [clojure.test :refer :all]
-            [chameleon.client :refer :all]))
+            [karmanaut.client :refer :all]))
 
 (deftest test-url
   (is (= "http://api.stackexchange.com/2.2/users/28804?site=stackoverflow" (url 28804))))
