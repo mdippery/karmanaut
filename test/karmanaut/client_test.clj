@@ -11,17 +11,14 @@
 (deftest test-body
   (is (instance? clojure.lang.PersistentArrayMap (body "mipadi"))))
 
-(deftest test-items
-  (is (instance? clojure.lang.PersistentVector (items "mipadi"))))
-
 (deftest test-user-data
   (is (instance? clojure.lang.PersistentHashMap (user-data "mipadi"))))
 
 (deftest test-user-key
-  (is (= "mipadi" (user-key "mipadi" "user_id"))))
+  (is (= "34agu" (user-key "mipadi" "id"))))
 
-(deftest test-display-name
-  (is (= "mipadi" (display-name "mipadi"))))
+(deftest test-link-karma
+  (is (instance? Long (link-karma "mipadi"))))
 
-(deftest test-reputation
-  (is (instance? Long (rep "mipadi"))))
+(deftest test-comment-karma
+  (is (instance? Long (comment-karma "mipadi"))))
