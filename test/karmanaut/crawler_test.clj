@@ -2,15 +2,15 @@
   (:require [clojure.test :refer :all]
             [karmanaut.crawler :refer :all]))
 
-(def ^{:private true} user-map {:user-id 28804,
+(def ^{:private true} user-map {:username "mipadi",
                                 :display-name "mipadi",
                                 :rep 100000})
 
 (deftest test-create-user-map
-  (let [user-map (create-user-map 28804)]
-    (is (= 28804 (:user-id user-map)))
+  (let [user-map (create-user-map "mipadi")]
+    (is (= "mipadi" (:username user-map)))
     (is (= "mipadi" (:display-name user-map)))))
 
 (deftest test-create-user-document
-  (is (= {:_id 28804, :display_name "mipadi"}
+  (is (= {:_id "mipadi", :display_name "mipadi"}
          (create-user-document user-map))))

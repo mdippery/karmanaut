@@ -2,26 +2,26 @@
   (:require [clj-http.client :as client])
   (:require [clojure.data.json :as json]))
 
-(defn url [user-id]
-  (str "http://api.stackexchange.com/2.2/users/" user-id "?site=stackoverflow"))
+(defn url [username]
+  (str "http://www.reddit.com/user/" username ".json"))
 
-(defn resp [user-id]
-  (client/get (url user-id)))
+(defn resp [username]
+  (client/get (url username)))
 
-(defn body [user-id]
-  (json/read-str (:body (resp user-id))))
+(defn body [username]
+  (json/read-str (:body (resp username))))
 
-(defn items [user-id]
-  ((body user-id) "items"))
+(defn items [username]
+  ((body username) "items"))
 
-(defn user-data [user-id]
-  ((items user-id) 0))
+(defn user-data [username]
+  ((items username) 0))
 
-(defn user-key [user-id data-key]
-  ((user-data user-id) data-key))
+(defn user-key [username data-key]
+  ((user-data username) data-key))
 
-(defn display-name [user-id]
-  (user-key user-id "display_name"))
+(defn display-name [username]
+  (user-key username "display_name"))
 
-(defn rep [user-id]
-  (user-key user-id "reputation"))
+(defn rep [username]
+  (user-key username "reputation"))
