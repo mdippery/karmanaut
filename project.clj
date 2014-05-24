@@ -1,4 +1,4 @@
-(defproject chameleon "1.0.0"
+(defproject karmanaut "1.0.0"
   :description "Takes samples of Reddit reputation over time"
   :url "https://github.com/mdippery/karmanaut"
   :license {:name "3-Clause BSD"
@@ -7,7 +7,7 @@
                  [clj-http "0.6.3"]
                  [org.clojure/data.json "0.2.4"]
                  [com.novemberain/monger "2.0.0-rc1"]]
-  :main ^:skip-aot chameleon.core
+  :main ^:skip-aot karmanaut.core
   :target-path "target/%s"
   :jar-name "karmanut.jar"
   :uberjar-name "karmanaut-standalone.jar"

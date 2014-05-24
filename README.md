@@ -27,7 +27,7 @@ into a MongoDB collection.
 
 5. Run the Jar file:
 
-        $ java -jar target/chameleon-1.0.0-standalone.jar
+        $ java -jar target/karmanaut-standalone.jar
 
 You will probably want to run the program as a cron task, to sample
 reputation periodically.
