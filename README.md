@@ -20,10 +20,10 @@ into a MongoDB collection.
 
 3. In the `karmanaut` database, create a collection called `users`.
 
-4. Populate the `users` collection with users whose reputation you would
-   like to record, in the following format:
+4. Populate the `users` collection with users whose karma you would like to
+   record, in the following format:
 
-        {_id: <stack overflow user id>}
+        {_id: <reddit username>}
 
 5. Run the Jar file:
 
