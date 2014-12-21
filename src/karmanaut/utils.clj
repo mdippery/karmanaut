@@ -4,6 +4,9 @@
 (defn env [key default]
   (get (System/getenv) key default))
 
+(defn version []
+  (-> "project.clj" slurp read-string (nth 2)))
+
 (defn utcnow []
   (Date.))
 

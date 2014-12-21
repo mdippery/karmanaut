@@ -1,14 +1,19 @@
 (ns karmanaut.client
   (:require [clj-http.client :as client])
-  (:require [clojure.data.json :as json]))
+  (:require [clojure.data.json :as json])
+  (:require [karmanaut.utils :as utils]))
 
 (defn url [username]
   (str "http://www.reddit.com/user/" username "/about.json"))
 
-(def client-params {:client-params {"http.useragent" "karmanaut/1.0.0 by mipadi - michael@monkey-robot.com"}})
+(defn user-agent []
+  (str "karmanaut/" (utils/version) " by mipadi - michael@monkey-robot.com"))
+
+(defn client-params []
+  {:client-params {"http.useragent" (user-agent)}})
 
 (defn resp [username]
-  (client/get (url username) client-params))
+  (client/get (url username) (client-params)))
 
 (defn body [username]
   (json/read-str (:body (resp username))))
