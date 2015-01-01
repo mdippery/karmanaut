@@ -1,4 +1,6 @@
-(defproject karmanaut "1.0.0"
+(def project-version "1.0.0")
+
+(defproject karmanaut project-version
   :description "Takes samples of Reddit reputation over time"
   :url "https://github.com/mdippery/karmanaut"
   :license {:name "3-Clause BSD"
@@ -11,4 +13,5 @@
   :target-path "target/%s"
   :jar-name "karmanut.jar"
   :uberjar-name "karmanaut-standalone.jar"
+  :manifest {"Implementation-Version" ~project-version}
   :profiles {:uberjar {:aot :all}})

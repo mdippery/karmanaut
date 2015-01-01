@@ -1,11 +1,15 @@
 (ns karmanaut.utils
+  (:gen-class)
+  (:require [clojure.java.io :as io])
   (:import [java.util Date]))
 
 (defn env [key default]
   (get (System/getenv) key default))
 
 (defn version []
-  (-> "project.clj" slurp read-string (nth 2)))
+  (if (.exists (io/as-file "project.clj"))
+    (-> "project.clj" slurp read-string (nth 2))
+    (-> (eval 'karmanaut.utils) .getPackage .getImplementationVersion)))
 
 (defn utcnow []
   (Date.))
