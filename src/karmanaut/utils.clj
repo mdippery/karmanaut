@@ -1,7 +1,10 @@
 (ns karmanaut.utils
   (:gen-class)
   (:require [clojure.java.io :as io])
-  (:import [java.util Date]))
+  (:import [java.util Calendar
+                      Date
+                      GregorianCalendar
+                      TimeZone]))
 
 (defn env [key default]
   (get (System/getenv) key default))
@@ -13,6 +16,17 @@
 
 (defn utcnow []
   (Date.))
+
+(defn utcnow-midnight []
+  (let [tz (TimeZone/getTimeZone "UTC")
+        c (GregorianCalendar. tz)]
+    (doto c
+      (.set Calendar/HOUR_OF_DAY 0)
+      (.set Calendar/MINUTE 0)
+      (.set Calendar/SECOND 0)
+      (.set Calendar/MILLISECOND 0))
+    (.getTime c)))
+
 
 (defn long-to-date
   "Reddit timestamps are the number of seconds since the
