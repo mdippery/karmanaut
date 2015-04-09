@@ -33,4 +33,4 @@
   (mc/upsert db/db "samples" (create-query-document user-map) (create-sample-document user-map) {:upsert true}))
 
 (defn insert-samples! [user-maps]
-  (dorun (map create-sample! user-maps)))
+  (doseq [u user-maps] (create-sample! u)))
