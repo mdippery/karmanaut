@@ -17,10 +17,12 @@
 (defn utcnow []
   (Date.))
 
-(defn utcnow-midnight []
+(defn midnight [dt]
+  "Returns the given datetime at midnight"
   (let [tz (TimeZone/getTimeZone "UTC")
         c (GregorianCalendar. tz)]
     (doto c
+      (.setTime dt)
       (.set Calendar/HOUR_OF_DAY 0)
       (.set Calendar/MINUTE 0)
       (.set Calendar/SECOND 0)
