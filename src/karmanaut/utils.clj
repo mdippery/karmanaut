@@ -27,7 +27,6 @@
       (.set Calendar/MILLISECOND 0))
     (.getTime c)))
 
-
 (defn long-to-date
   "Reddit timestamps are the number of seconds since the
   Unix epoch, in UTC."
