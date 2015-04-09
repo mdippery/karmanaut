@@ -23,14 +23,14 @@
         secs (utils/seconds-since-midnight (utils/utcnow))
         stats {(str "link_karma." secs) (:link-karma user-map),
                (str "comment_karma." secs) (:comment-karma user-map)}]
-    {:user (:username user-map),
-     :timestamp mn,
-     "$set" stats}))
+    {"$set" stats}))
+
+(defn create-query-document [user-map]
+  {:user (:username user-map),
+   :timestamp (utils/midnight (utils/utcnow))})
 
 (defn create-sample! [user-map]
-  (let [q {:user (:username user-map),
-           :timestamp (utils/midnight (utils/utcnow))}]
-    (mc/upsert db/db "samples" q (create-sample-document user-map) {:upsert true})))
+  (mc/upsert db/db "samples" (create-query-document user-map) (create-sample-document user-map) {:upsert true}))
 
 (defn insert-samples! [user-maps]
   (dorun (map create-sample! user-maps)))
