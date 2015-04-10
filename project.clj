@@ -11,7 +11,7 @@
                  [com.novemberain/monger "2.0.0-rc1"]]
   :main ^:skip-aot karmanaut.core
   :target-path "target/%s"
-  :jar-name "karmanut.jar"
+  :jar-name "karmanaut.jar"
   :uberjar-name "karmanaut-standalone.jar"
   :manifest {"Implementation-Version" ~project-version}
   :profiles {:uberjar {:aot :all}})
