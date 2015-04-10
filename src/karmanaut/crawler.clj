@@ -19,10 +19,9 @@
   {:_id (:username user-map)})
 
 (defn create-sample-document [user-map]
-  (let [mn (utils/midnight (utils/utcnow))
-        secs (utils/hours-since-midnight (utils/utcnow))
-        stats {(str "link_karma." secs) (:link-karma user-map),
-               (str "comment_karma." secs) (:comment-karma user-map)}]
+  (let [hours (utils/hours-since-midnight (utils/utcnow))
+        stats {(str "link_karma." hours) (:link-karma user-map),
+               (str "comment_karma." hours) (:comment-karma user-map)}]
     {"$set" stats}))
 
 (defn create-query-document [user-map]
