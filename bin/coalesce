@@ -17,7 +17,7 @@ def main():
     client = MongoClient()
     db = client.karmanaut
 
-    for sample in db.samples.find():
+    for sample in db.samples_old.find():
         dt = sample['timestamp']
         ts = midnight(dt)
         secs = hours_since_midnight(dt)
