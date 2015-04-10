@@ -34,7 +34,7 @@
   (quot (.getTime dt) 1000))
 
 (defn hours-since-midnight [dt]
-  "Number of seconds elapsed since midnight"
+  "Number of hours elapsed since midnight"
   (let [mn (midnight dt)
         mnsec (seconds-since-epoch mn)
         dtsec (seconds-since-epoch dt)]
