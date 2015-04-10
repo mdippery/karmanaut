@@ -9,9 +9,8 @@ def midnight(dt):
     return dt.replace(hour=0, minute=0, second=0, microsecond=0)
 
 
-def seconds_since_midnight(dt):
-    mn = midnight(dt)
-    return int((dt - mn).total_seconds())
+def hours_since_midnight(dt):
+    return dt.hour
 
 
 def main():
@@ -21,7 +20,7 @@ def main():
     for sample in db.samples.find():
         dt = sample['timestamp']
         ts = midnight(dt)
-        secs = seconds_since_midnight(dt)
+        secs = hours_since_midnight(dt)
         q = {'user': sample['user'], 'timestamp': ts}
         doc = {"$set": {
             "link_karma.{:d}".format(secs): sample['link_karma'],

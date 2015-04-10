@@ -33,12 +33,12 @@
   "Number of seconds elapsed since the Unix epoch"
   (quot (.getTime dt) 1000))
 
-(defn seconds-since-midnight [dt]
+(defn hours-since-midnight [dt]
   "Number of seconds elapsed since midnight"
   (let [mn (midnight dt)
         mnsec (seconds-since-epoch mn)
         dtsec (seconds-since-epoch dt)]
-    (- dtsec mnsec)))
+    (quot (- dtsec mnsec) (* 60 60))))
 
 (defn long-to-date
   "Reddit timestamps are the number of seconds since the
