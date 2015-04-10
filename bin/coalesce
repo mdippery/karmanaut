@@ -22,10 +22,11 @@ def main():
         ts = midnight(dt)
         secs = hours_since_midnight(dt)
         q = {'user': sample['user'], 'timestamp': ts}
-        doc = {"$set": {
+        up = {"$set": {
             "link_karma.{:d}".format(secs): sample['link_karma'],
             "comment_karma.{:d}".format(secs): sample['comment_karma'],
         }}
+        db.samples.update_one(q, up, upsert=True)
 
     return 0
 
