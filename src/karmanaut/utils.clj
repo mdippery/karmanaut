@@ -29,12 +29,14 @@
       (.set Calendar/MILLISECOND 0))
     (.getTime c)))
 
-(defn seconds-since-epoch [dt]
+(defn seconds-since-epoch
   "Number of seconds elapsed since the Unix epoch"
+  [dt]
   (quot (.getTime dt) 1000))
 
-(defn hours-since-midnight [dt]
+(defn hours-since-midnight
   "Number of hours elapsed since midnight"
+  [dt]
   (let [mn (midnight dt)
         mnsec (seconds-since-epoch mn)
         dtsec (seconds-since-epoch dt)]
