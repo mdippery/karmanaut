@@ -6,14 +6,14 @@
 (defn url [username]
   (str "http://www.reddit.com/user/" username "/about.json"))
 
-(defn user-agent []
-  (str "karmanaut/" (utils/version) " by mipadi - michael@monkey-robot.com"))
+(def user-agent
+  (str "karmanaut/" utils/version " by mipadi - michael@monkey-robot.com"))
 
-(defn client-params []
-  {:client-params {"http.useragent" (user-agent)}})
+(def client-params
+  {:client-params {"http.useragent" user-agent}})
 
 (defn resp [username]
-  (client/get (url username) (client-params)))
+  (client/get (url username) client-params))
 
 (defn body [username]
   (json/read-str (:body (resp username))))

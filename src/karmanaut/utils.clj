@@ -9,7 +9,7 @@
 (defn env [key default]
   (get (System/getenv) key default))
 
-(defn version []
+(def version
   (if (.exists (io/as-file "project.clj"))
     (-> "project.clj" slurp read-string (nth 2))
     (-> (eval 'karmanaut.utils) .getPackage .getImplementationVersion)))
