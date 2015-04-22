@@ -1,3 +1,9 @@
+**This project has been superseded by
+[Whitman](http://github.com/mdippery/whitman) and is unlikely to see any more
+improvements or bugfixes.**
+
+---
+
 # Karmanaut
 
 Karmanaut is a simple service for sampling link and comment reputation from
